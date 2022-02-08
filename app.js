@@ -211,7 +211,7 @@ const addAlarm = (event) => {
     cleanInput(hour, minute, second, reason);
 
     // Initially if localStorage empty then create a local storage with key alarms and value alarmlist
-    if(window.localStorage.length === 0){
+    if(!localStorage.getItem("alarms")){
         window.localStorage.setItem('alarms', JSON.stringify(alarmList));
     }
     // If storage not empty then create new list for new alarms set by user and push them in storage 
